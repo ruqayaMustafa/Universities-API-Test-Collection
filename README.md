@@ -8,4 +8,4 @@ follow the bellow steps In order to run this test:
 
 3-select Universities API Test environment file
 
-4-clcik in run
+4-click on Run
