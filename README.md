@@ -1,7 +1,7 @@
 # Universities-API-Test-Collection
 follow the bellow steps In order to run this test:
 
-1-import the Universities API Test Collection and Universities API Test enviroment file to your postman application
+1-import the Universities API Test Collection and Universities API Test enviroment files to your postman application,both uploaded on this Repository: Universities API Test Collection.postman_environment.json, Universities API Test Collection.postman_collection.json.
 
 
 2-open postman collection runner
