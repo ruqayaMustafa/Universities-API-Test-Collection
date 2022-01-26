@@ -1,0 +1,813 @@
+{
+	"info": {
+		"_postman_id": "4251ba61-c29d-48a9-a6d6-7da53e950bc5",
+		"name": "Universities API Test Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List all universites (list all with no search criteria)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"var jsonData = pm.response.json()[0];",
+							"  pm.test(\"The response has all properties\", function () {",
+							"      pm.expect(jsonData).to.have.nested.property(\"country\");",
+							"      pm.expect(jsonData).to.have.nested.property(\"name\");",
+							"      pm.expect(jsonData).to.have.nested.property(\"web_pages\");",
+							"      pm.expect(jsonData).to.have.nested.property(\"alpha_two_code\");",
+							"      pm.expect(jsonData).to.have.nested.property(\"state-province\");",
+							"      pm.expect(jsonData).to.have.nested.property(\"domains\");",
+							"    });",
+							" "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://universities.hipolabs.com/search",
+					"protocol": "http",
+					"host": [
+						"universities",
+						"hipolabs",
+						"com"
+					],
+					"path": [
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Universities with search criteria(by name&country) one exact result",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"var jsonData = pm.response.json()[0];",
+							"pm.test(\"Country is Turkey\", function () {",
+							"    pm.expect(jsonData.country).to.eql('Turkey');",
+							"    });",
+							"    //same as the above test method but in diffrenet way",
+							"      pm.test(\"Country is Turkey\", function () {",
+							"      pm.expect(jsonData).to.have.nested.property(\"country\", 'Turkey');",
+							"    });",
+							"    pm.test(\"Domains is metu.edu.tr\", function () {",
+							"    pm.expect(jsonData.domains).to.contain('metu.edu.tr');",
+							"    });",
+							"    pm.test(\"Name is Middle East Technical University\", function () {",
+							"    pm.expect(jsonData.name).to.eql('Middle East Technical University');",
+							"    });",
+							"     pm.test(\"Web_pages is http://www.metu.edu.tr/\", function () {",
+							"     pm.expect(jsonData.web_pages).to.contain('http://www.metu.edu.tr/');",
+							"    });",
+							"       pm.test(\"Alpha_two_code is TR\", function () {",
+							"   pm.expect(jsonData.alpha_two_code).to.contain('TR');",
+							"    });",
+							"    ",
+							"    ",
+							"   "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://universities.hipolabs.com/search?name=Middle&country=Turkey",
+					"protocol": "http",
+					"host": [
+						"universities",
+						"hipolabs",
+						"com"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Middle"
+						},
+						{
+							"key": "country",
+							"value": "Turkey"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Universities with search criteria(by same value for name&country)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"var jsonData = pm.response.json();",
+							"let count=Object.keys(jsonData).length;",
+							"country='Jordan';",
+							"name='Jordan';",
+							"let utils = eval(environment.utils)();",
+							"//you can find the implementation of countryAndNameSearchTest function inside the collection pre-request script",
+							"utils.myPackage.countryAndNameSearchTest(jsonData,count,name,country);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://universities.hipolabs.com/search?name=jordan&country=jordan",
+					"protocol": "http",
+					"host": [
+						"universities",
+						"hipolabs",
+						"com"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "jordan"
+						},
+						{
+							"key": "country",
+							"value": "jordan"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Universities with search criteria(by exact country)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"var jsonData = pm.response.json();",
+							"let count=Object.keys(jsonData).length;",
+							"country='Turkey';",
+							"let utils = eval(environment.utils)();",
+							"//you can find the implementation of countryOnlyTest function inside the collection pre-request script",
+							"utils.myPackage.countryOnlyTest(jsonData,count,country);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://universities.hipolabs.com/search?country=Turkey",
+					"protocol": "http",
+					"host": [
+						"universities",
+						"hipolabs",
+						"com"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "Turkey"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Universities with search criteria(by exact name)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"var jsonData = pm.response.json()[0];",
+							"    pm.test(\"Name is Middle East University\", function () {",
+							"    pm.expect(jsonData.name).to.eql('Middle East University');",
+							"    });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://universities.hipolabs.com/search?name=Middle East University",
+					"protocol": "http",
+					"host": [
+						"universities",
+						"hipolabs",
+						"com"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Middle East University"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Universities with search criteria(by not full name/like name)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"var jsonData = pm.response.json();",
+							"pm.test(\"Data found\", function () {",
+							"    pm.expect(jsonData).to.not.eql([]);",
+							"     });",
+							"let count=Object.keys(jsonData).length;",
+							"name='Middle';",
+							"let utils = eval(environment.utils)();",
+							"//you can find the implementation of nameOnlyTest function inside the collection pre-request script",
+							"utils.myPackage.nameOnlyTest(jsonData,count,name);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://universities.hipolabs.com/search?name=Middle",
+					"protocol": "http",
+					"host": [
+						"universities",
+						"hipolabs",
+						"com"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Middle"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Universities with search criteria(by not full countr/like country)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"var jsonData = pm.response.json();",
+							"//this test will be failed because there is a bug: the API response with no data when search with non-full country name, in this request i used Jor instaed of Jordan",
+							"pm.test(\"Data found\", function () {",
+							"    pm.expect(jsonData).to.not.eql([]);",
+							"     });",
+							"let count=Object.keys(jsonData).length;",
+							"country='Jor';",
+							"let utils = eval(environment.utils)();",
+							"//you can find the implementation of countryOnlyTest function inside the collection pre-request script",
+							"utils.myPackage.countryOnlyTest(jsonData,count,country);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://universities.hipolabs.com/search?country=Jor",
+					"protocol": "http",
+					"host": [
+						"universities",
+						"hipolabs",
+						"com"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "Jor"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Universities with search criteria(name upper case)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"var jsonData = pm.response.json();",
+							"pm.test(\"Data found\", function () {",
+							"    pm.expect(jsonData).to.not.eql([]);",
+							"     });",
+							"let count=Object.keys(jsonData).length;",
+							"name='Mid';",
+							"let utils = eval(environment.utils)();",
+							"//you can find the implementation of nameOnlyTest function inside the collection pre-request script",
+							"utils.myPackage.nameOnlyTest(jsonData,count,name);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://universities.hipolabs.com/search?name=MID",
+					"protocol": "http",
+					"host": [
+						"universities",
+						"hipolabs",
+						"com"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "MID"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Universities with search criteria(country upper case)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"var jsonData = pm.response.json();",
+							"pm.test(\"Data found\", function () {",
+							"    pm.expect(jsonData).to.not.eql([]);",
+							"     });",
+							"let count=Object.keys(jsonData).length;",
+							"country='Jordan';",
+							"let utils = eval(environment.utils)();",
+							"//you can find the implementation of countryOnlyTest function inside the collection pre-request script",
+							"utils.myPackage.countryOnlyTest(jsonData,count,country);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://universities.hipolabs.com/search?country=JORdan",
+					"protocol": "http",
+					"host": [
+						"universities",
+						"hipolabs",
+						"com"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "JORdan"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Universities with search criteria(name no match)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"//this test because the API designed to respond with empty json ([]) when no data found",
+							"var jsonData = pm.response.json();",
+							"   pm.test(\"No data found\", function () {",
+							"    pm.expect(jsonData).to.eql([]);",
+							"     });",
+							"     //Enhancement, this test will fail since there is no validation message returned to the user when put not exist name, will assume that the message is: no name found.",
+							"      pm.test(\"No name found validation message test\", function () {",
+							"    pm.expect(jsonData).to.eql('no name found');",
+							"     });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://universities.hipolabs.com/search?name=ruqaya",
+					"protocol": "http",
+					"host": [
+						"universities",
+						"hipolabs",
+						"com"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "ruqaya"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Universities with search criteria(country no match)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"//this test because the API designed to respond with empty json ([]) when no data found",
+							"var jsonData = pm.response.json();",
+							"   pm.test(\"No data found\", function () {",
+							"    pm.expect(jsonData).to.eql([]);",
+							"     });",
+							"     //Enhancement, this test will fail since there is no validation message returned to the user when put not exist country, will assume that the message is: no country found.",
+							"      pm.test(\"No country found validation message test\", function () {",
+							"    pm.expect(jsonData).to.eql('no country found');",
+							"     });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://universities.hipolabs.com/search?country=ruqaya",
+					"protocol": "http",
+					"host": [
+						"universities",
+						"hipolabs",
+						"com"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "ruqaya"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Universities with search criteria(name&country no match)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"//this test because the API designed to respond with empty json ([]) when no data found",
+							"var jsonData = pm.response.json();",
+							"   pm.test(\"No data found\", function () {",
+							"    pm.expect(jsonData).to.eql([]);",
+							"     });",
+							"        //Enhancement, this test will fail since there is no validation message returned to the user when put not exist country and name, will assume that the message is: no data found.",
+							"      pm.test(\"No data found validation message test\", function () {",
+							"    pm.expect(jsonData).to.eql('no data found');",
+							"     });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://universities.hipolabs.com/search?name=ruqay&country=ruqaya",
+					"protocol": "http",
+					"host": [
+						"universities",
+						"hipolabs",
+						"com"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "ruqay"
+						},
+						{
+							"key": "country",
+							"value": "ruqaya"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Universities with search criteria(name match&country no match)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"//this test because the API designed to respond with empty json ([]) when no data found",
+							"var jsonData = pm.response.json();",
+							"   pm.test(\"No data found\", function () {",
+							"    pm.expect(jsonData).to.eql([]);",
+							"     });",
+							"     //Enhancement, this test will fail since there is no validation message returned to the user when put not exist country and name, will assume that the message is: no data found.",
+							"      pm.test(\"No data found validation message test\", function () {",
+							"    pm.expect(jsonData).to.eql('no data found');",
+							"     });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://universities.hipolabs.com/search?name=Middle&country=ruqaya",
+					"protocol": "http",
+					"host": [
+						"universities",
+						"hipolabs",
+						"com"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Middle"
+						},
+						{
+							"key": "country",
+							"value": "ruqaya"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Universities with search criteria(name no match&country match",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"//this test because the API designed to respond with empty json ([]) when no data found",
+							"var jsonData = pm.response.json();",
+							"   pm.test(\"No data found\", function () {",
+							"    pm.expect(jsonData).to.eql([]);",
+							"     });",
+							"",
+							"      //Enhancement, this test will fail since there is no validation message returned to the user when put not exist country and name, will assume that the message is: no data found.",
+							"      pm.test(\"No data found validation message test\", function () {",
+							"    pm.expect(jsonData).to.eql('no data found');",
+							"     });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://universities.hipolabs.com/search?name=ruqaya&country=Turkey",
+					"protocol": "http",
+					"host": [
+						"universities",
+						"hipolabs",
+						"com"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "ruqaya"
+						},
+						{
+							"key": "country",
+							"value": "Turkey"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Universities with typo error in search criteria",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"var jsonData = pm.response.json();",
+							"   pm.test(\"Data found response\", function () {",
+							"    pm.expect(jsonData).to.not.eql([]);",
+							"     });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://universities.hipolabs.com/search?nam=&ountry=Jordan",
+					"protocol": "http",
+					"host": [
+						"universities",
+						"hipolabs",
+						"com"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "alpha_two_code",
+							"value": "US",
+							"disabled": true
+						},
+						{
+							"key": "nam",
+							"value": ""
+						},
+						{
+							"key": "ountry",
+							"value": "Jordan"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"postman.setEnvironmentVariable(\"utils\", () => {",
+					"    var countryAndNameSearchTest = (jsonData,count,searchValueName,searchValueCountry) => {",
+					"        for(let i=0; i<count;i++){",
+					"   pm.test(\"Country is\"+\"  \"+searchValueCountry+\"  \"+\"for result number\"+i+\"\", function () {",
+					"     pm.expect(jsonData[i].country).contains(searchValueCountry);",
+					"     });",
+					"     pm.test(\"Name is contain\"+\"  \"+searchValueName+\"  \"+\"for result number\"+i+\"\", function () {",
+					"     pm.expect(jsonData[i].name).contains(searchValueName);",
+					"     });}",
+					"    }",
+					"    var countryOnlyTest= (jsonData,count,searchValueCountry) => {",
+					"    for(let i=0; i<count;i++){",
+					"   pm.test(\"Country is\" +\" \"+searchValueCountry+\" \"+\"for result number\"+i+\"\", function () {",
+					"     pm.expect(jsonData[i].country).contains(searchValueCountry);",
+					"     });}",
+					"    }",
+					"      var nameOnlyTest=(jsonData,count,searchValueName) => {",
+					"   for(let i=0; i<count;i++){",
+					"   pm.test(\"Name contains\"+\" \"+searchValueName+\" \"+\"result number\"+i+\"\", function () {",
+					"     pm.expect(jsonData[i].name).contains(searchValueName);",
+					"     });}",
+					"    }",
+					"",
+					"    return {",
+					"        myPackage: {",
+					"            countryAndNameSearchTest,",
+					"            countryOnlyTest,",
+					"            nameOnlyTest",
+					"        }",
+					"    };",
+					"});"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
