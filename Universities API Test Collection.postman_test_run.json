@@ -1,0 +1,2049 @@
+{
+	"id": "77e51b85-2d8d-4939-bedf-91c9a59dc62a",
+	"name": "Universities API Test Collection",
+	"timestamp": "2022-01-26T01:56:04.961Z",
+	"collection_id": "4251ba61-c29d-48a9-a6d6-7da53e950bc5",
+	"folder_id": 0,
+	"environment_id": "f12b9e47-ff85-4caf-bfa3-86f598bea173",
+	"totalPass": 271,
+	"totalFail": 6,
+	"results": [
+		{
+			"id": "1e5e776b-1a76-48aa-8ac0-3a18f89b7d31",
+			"name": "List all universites (list all with no search criteria)",
+			"url": "http://universities.hipolabs.com/search",
+			"time": 3272,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"The response has all properties": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"The response has all properties": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3272
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"The response has all properties": true
+				}
+			]
+		},
+		{
+			"id": "75176aeb-f427-4466-83b0-75afe8a727d5",
+			"name": "List Universities with search criteria(by name&country) one exact result",
+			"url": "http://universities.hipolabs.com/search?name=Middle&country=Turkey",
+			"time": 225,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Country is Turkey": true,
+				"Domains is metu.edu.tr": true,
+				"Name is Middle East Technical University": true,
+				"Web_pages is http://www.metu.edu.tr/": true,
+				"Alpha_two_code is TR": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Domains is metu.edu.tr": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name is Middle East Technical University": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Web_pages is http://www.metu.edu.tr/": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Alpha_two_code is TR": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				225
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Country is Turkey": true,
+					"Domains is metu.edu.tr": true,
+					"Name is Middle East Technical University": true,
+					"Web_pages is http://www.metu.edu.tr/": true,
+					"Alpha_two_code is TR": true
+				}
+			]
+		},
+		{
+			"id": "590818b2-0f9e-41dc-b4af-21cf7662a1ef",
+			"name": "List Universities with search criteria(by same value for name&country)",
+			"url": "http://universities.hipolabs.com/search?name=jordan&country=jordan",
+			"time": 202,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Country is  Jordan  for result number0": true,
+				"Name is contain  Jordan  for result number0": true,
+				"Country is  Jordan  for result number1": true,
+				"Name is contain  Jordan  for result number1": true,
+				"Country is  Jordan  for result number2": true,
+				"Name is contain  Jordan  for result number2": true,
+				"Country is  Jordan  for result number3": true,
+				"Name is contain  Jordan  for result number3": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is  Jordan  for result number0": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name is contain  Jordan  for result number0": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is  Jordan  for result number1": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name is contain  Jordan  for result number1": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is  Jordan  for result number2": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name is contain  Jordan  for result number2": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is  Jordan  for result number3": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name is contain  Jordan  for result number3": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				202
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Country is  Jordan  for result number0": true,
+					"Name is contain  Jordan  for result number0": true,
+					"Country is  Jordan  for result number1": true,
+					"Name is contain  Jordan  for result number1": true,
+					"Country is  Jordan  for result number2": true,
+					"Name is contain  Jordan  for result number2": true,
+					"Country is  Jordan  for result number3": true,
+					"Name is contain  Jordan  for result number3": true
+				}
+			]
+		},
+		{
+			"id": "255a9d42-8652-42e9-9682-4d4c9ae06f66",
+			"name": "List Universities with search criteria(by exact country)",
+			"url": "http://universities.hipolabs.com/search?country=Turkey",
+			"time": 234,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Country is Turkey for result number0": true,
+				"Country is Turkey for result number1": true,
+				"Country is Turkey for result number2": true,
+				"Country is Turkey for result number3": true,
+				"Country is Turkey for result number4": true,
+				"Country is Turkey for result number5": true,
+				"Country is Turkey for result number6": true,
+				"Country is Turkey for result number7": true,
+				"Country is Turkey for result number8": true,
+				"Country is Turkey for result number9": true,
+				"Country is Turkey for result number10": true,
+				"Country is Turkey for result number11": true,
+				"Country is Turkey for result number12": true,
+				"Country is Turkey for result number13": true,
+				"Country is Turkey for result number14": true,
+				"Country is Turkey for result number15": true,
+				"Country is Turkey for result number16": true,
+				"Country is Turkey for result number17": true,
+				"Country is Turkey for result number18": true,
+				"Country is Turkey for result number19": true,
+				"Country is Turkey for result number20": true,
+				"Country is Turkey for result number21": true,
+				"Country is Turkey for result number22": true,
+				"Country is Turkey for result number23": true,
+				"Country is Turkey for result number24": true,
+				"Country is Turkey for result number25": true,
+				"Country is Turkey for result number26": true,
+				"Country is Turkey for result number27": true,
+				"Country is Turkey for result number28": true,
+				"Country is Turkey for result number29": true,
+				"Country is Turkey for result number30": true,
+				"Country is Turkey for result number31": true,
+				"Country is Turkey for result number32": true,
+				"Country is Turkey for result number33": true,
+				"Country is Turkey for result number34": true,
+				"Country is Turkey for result number35": true,
+				"Country is Turkey for result number36": true,
+				"Country is Turkey for result number37": true,
+				"Country is Turkey for result number38": true,
+				"Country is Turkey for result number39": true,
+				"Country is Turkey for result number40": true,
+				"Country is Turkey for result number41": true,
+				"Country is Turkey for result number42": true,
+				"Country is Turkey for result number43": true,
+				"Country is Turkey for result number44": true,
+				"Country is Turkey for result number45": true,
+				"Country is Turkey for result number46": true,
+				"Country is Turkey for result number47": true,
+				"Country is Turkey for result number48": true,
+				"Country is Turkey for result number49": true,
+				"Country is Turkey for result number50": true,
+				"Country is Turkey for result number51": true,
+				"Country is Turkey for result number52": true,
+				"Country is Turkey for result number53": true,
+				"Country is Turkey for result number54": true,
+				"Country is Turkey for result number55": true,
+				"Country is Turkey for result number56": true,
+				"Country is Turkey for result number57": true,
+				"Country is Turkey for result number58": true,
+				"Country is Turkey for result number59": true,
+				"Country is Turkey for result number60": true,
+				"Country is Turkey for result number61": true,
+				"Country is Turkey for result number62": true,
+				"Country is Turkey for result number63": true,
+				"Country is Turkey for result number64": true,
+				"Country is Turkey for result number65": true,
+				"Country is Turkey for result number66": true,
+				"Country is Turkey for result number67": true,
+				"Country is Turkey for result number68": true,
+				"Country is Turkey for result number69": true,
+				"Country is Turkey for result number70": true,
+				"Country is Turkey for result number71": true,
+				"Country is Turkey for result number72": true,
+				"Country is Turkey for result number73": true,
+				"Country is Turkey for result number74": true,
+				"Country is Turkey for result number75": true,
+				"Country is Turkey for result number76": true,
+				"Country is Turkey for result number77": true,
+				"Country is Turkey for result number78": true,
+				"Country is Turkey for result number79": true,
+				"Country is Turkey for result number80": true,
+				"Country is Turkey for result number81": true,
+				"Country is Turkey for result number82": true,
+				"Country is Turkey for result number83": true,
+				"Country is Turkey for result number84": true,
+				"Country is Turkey for result number85": true,
+				"Country is Turkey for result number86": true,
+				"Country is Turkey for result number87": true,
+				"Country is Turkey for result number88": true,
+				"Country is Turkey for result number89": true,
+				"Country is Turkey for result number90": true,
+				"Country is Turkey for result number91": true,
+				"Country is Turkey for result number92": true,
+				"Country is Turkey for result number93": true,
+				"Country is Turkey for result number94": true,
+				"Country is Turkey for result number95": true,
+				"Country is Turkey for result number96": true,
+				"Country is Turkey for result number97": true,
+				"Country is Turkey for result number98": true,
+				"Country is Turkey for result number99": true,
+				"Country is Turkey for result number100": true,
+				"Country is Turkey for result number101": true,
+				"Country is Turkey for result number102": true,
+				"Country is Turkey for result number103": true,
+				"Country is Turkey for result number104": true,
+				"Country is Turkey for result number105": true,
+				"Country is Turkey for result number106": true,
+				"Country is Turkey for result number107": true,
+				"Country is Turkey for result number108": true,
+				"Country is Turkey for result number109": true,
+				"Country is Turkey for result number110": true,
+				"Country is Turkey for result number111": true,
+				"Country is Turkey for result number112": true,
+				"Country is Turkey for result number113": true,
+				"Country is Turkey for result number114": true,
+				"Country is Turkey for result number115": true,
+				"Country is Turkey for result number116": true,
+				"Country is Turkey for result number117": true,
+				"Country is Turkey for result number118": true,
+				"Country is Turkey for result number119": true,
+				"Country is Turkey for result number120": true,
+				"Country is Turkey for result number121": true,
+				"Country is Turkey for result number122": true,
+				"Country is Turkey for result number123": true,
+				"Country is Turkey for result number124": true,
+				"Country is Turkey for result number125": true,
+				"Country is Turkey for result number126": true,
+				"Country is Turkey for result number127": true,
+				"Country is Turkey for result number128": true,
+				"Country is Turkey for result number129": true,
+				"Country is Turkey for result number130": true,
+				"Country is Turkey for result number131": true,
+				"Country is Turkey for result number132": true,
+				"Country is Turkey for result number133": true,
+				"Country is Turkey for result number134": true,
+				"Country is Turkey for result number135": true,
+				"Country is Turkey for result number136": true,
+				"Country is Turkey for result number137": true,
+				"Country is Turkey for result number138": true,
+				"Country is Turkey for result number139": true,
+				"Country is Turkey for result number140": true,
+				"Country is Turkey for result number141": true,
+				"Country is Turkey for result number142": true,
+				"Country is Turkey for result number143": true,
+				"Country is Turkey for result number144": true,
+				"Country is Turkey for result number145": true,
+				"Country is Turkey for result number146": true,
+				"Country is Turkey for result number147": true,
+				"Country is Turkey for result number148": true,
+				"Country is Turkey for result number149": true,
+				"Country is Turkey for result number150": true,
+				"Country is Turkey for result number151": true,
+				"Country is Turkey for result number152": true,
+				"Country is Turkey for result number153": true,
+				"Country is Turkey for result number154": true,
+				"Country is Turkey for result number155": true,
+				"Country is Turkey for result number156": true,
+				"Country is Turkey for result number157": true,
+				"Country is Turkey for result number158": true,
+				"Country is Turkey for result number159": true,
+				"Country is Turkey for result number160": true,
+				"Country is Turkey for result number161": true,
+				"Country is Turkey for result number162": true,
+				"Country is Turkey for result number163": true,
+				"Country is Turkey for result number164": true,
+				"Country is Turkey for result number165": true,
+				"Country is Turkey for result number166": true,
+				"Country is Turkey for result number167": true,
+				"Country is Turkey for result number168": true,
+				"Country is Turkey for result number169": true,
+				"Country is Turkey for result number170": true,
+				"Country is Turkey for result number171": true,
+				"Country is Turkey for result number172": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number0": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number1": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number2": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number3": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number4": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number5": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number6": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number7": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number8": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number9": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number10": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number11": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number12": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number13": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number14": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number15": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number16": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number17": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number18": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number19": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number20": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number21": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number22": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number23": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number24": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number25": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number26": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number27": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number28": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number29": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number30": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number31": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number32": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number33": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number34": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number35": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number36": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number37": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number38": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number39": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number40": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number41": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number42": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number43": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number44": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number45": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number46": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number47": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number48": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number49": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number50": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number51": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number52": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number53": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number54": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number55": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number56": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number57": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number58": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number59": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number60": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number61": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number62": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number63": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number64": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number65": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number66": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number67": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number68": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number69": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number70": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number71": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number72": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number73": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number74": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number75": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number76": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number77": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number78": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number79": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number80": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number81": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number82": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number83": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number84": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number85": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number86": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number87": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number88": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number89": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number90": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number91": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number92": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number93": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number94": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number95": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number96": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number97": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number98": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number99": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number100": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number101": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number102": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number103": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number104": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number105": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number106": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number107": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number108": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number109": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number110": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number111": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number112": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number113": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number114": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number115": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number116": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number117": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number118": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number119": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number120": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number121": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number122": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number123": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number124": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number125": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number126": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number127": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number128": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number129": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number130": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number131": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number132": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number133": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number134": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number135": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number136": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number137": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number138": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number139": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number140": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number141": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number142": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number143": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number144": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number145": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number146": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number147": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number148": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number149": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number150": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number151": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number152": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number153": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number154": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number155": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number156": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number157": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number158": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number159": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number160": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number161": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number162": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number163": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number164": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number165": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number166": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number167": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number168": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number169": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number170": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number171": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Turkey for result number172": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				234
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Country is Turkey for result number0": true,
+					"Country is Turkey for result number1": true,
+					"Country is Turkey for result number2": true,
+					"Country is Turkey for result number3": true,
+					"Country is Turkey for result number4": true,
+					"Country is Turkey for result number5": true,
+					"Country is Turkey for result number6": true,
+					"Country is Turkey for result number7": true,
+					"Country is Turkey for result number8": true,
+					"Country is Turkey for result number9": true,
+					"Country is Turkey for result number10": true,
+					"Country is Turkey for result number11": true,
+					"Country is Turkey for result number12": true,
+					"Country is Turkey for result number13": true,
+					"Country is Turkey for result number14": true,
+					"Country is Turkey for result number15": true,
+					"Country is Turkey for result number16": true,
+					"Country is Turkey for result number17": true,
+					"Country is Turkey for result number18": true,
+					"Country is Turkey for result number19": true,
+					"Country is Turkey for result number20": true,
+					"Country is Turkey for result number21": true,
+					"Country is Turkey for result number22": true,
+					"Country is Turkey for result number23": true,
+					"Country is Turkey for result number24": true,
+					"Country is Turkey for result number25": true,
+					"Country is Turkey for result number26": true,
+					"Country is Turkey for result number27": true,
+					"Country is Turkey for result number28": true,
+					"Country is Turkey for result number29": true,
+					"Country is Turkey for result number30": true,
+					"Country is Turkey for result number31": true,
+					"Country is Turkey for result number32": true,
+					"Country is Turkey for result number33": true,
+					"Country is Turkey for result number34": true,
+					"Country is Turkey for result number35": true,
+					"Country is Turkey for result number36": true,
+					"Country is Turkey for result number37": true,
+					"Country is Turkey for result number38": true,
+					"Country is Turkey for result number39": true,
+					"Country is Turkey for result number40": true,
+					"Country is Turkey for result number41": true,
+					"Country is Turkey for result number42": true,
+					"Country is Turkey for result number43": true,
+					"Country is Turkey for result number44": true,
+					"Country is Turkey for result number45": true,
+					"Country is Turkey for result number46": true,
+					"Country is Turkey for result number47": true,
+					"Country is Turkey for result number48": true,
+					"Country is Turkey for result number49": true,
+					"Country is Turkey for result number50": true,
+					"Country is Turkey for result number51": true,
+					"Country is Turkey for result number52": true,
+					"Country is Turkey for result number53": true,
+					"Country is Turkey for result number54": true,
+					"Country is Turkey for result number55": true,
+					"Country is Turkey for result number56": true,
+					"Country is Turkey for result number57": true,
+					"Country is Turkey for result number58": true,
+					"Country is Turkey for result number59": true,
+					"Country is Turkey for result number60": true,
+					"Country is Turkey for result number61": true,
+					"Country is Turkey for result number62": true,
+					"Country is Turkey for result number63": true,
+					"Country is Turkey for result number64": true,
+					"Country is Turkey for result number65": true,
+					"Country is Turkey for result number66": true,
+					"Country is Turkey for result number67": true,
+					"Country is Turkey for result number68": true,
+					"Country is Turkey for result number69": true,
+					"Country is Turkey for result number70": true,
+					"Country is Turkey for result number71": true,
+					"Country is Turkey for result number72": true,
+					"Country is Turkey for result number73": true,
+					"Country is Turkey for result number74": true,
+					"Country is Turkey for result number75": true,
+					"Country is Turkey for result number76": true,
+					"Country is Turkey for result number77": true,
+					"Country is Turkey for result number78": true,
+					"Country is Turkey for result number79": true,
+					"Country is Turkey for result number80": true,
+					"Country is Turkey for result number81": true,
+					"Country is Turkey for result number82": true,
+					"Country is Turkey for result number83": true,
+					"Country is Turkey for result number84": true,
+					"Country is Turkey for result number85": true,
+					"Country is Turkey for result number86": true,
+					"Country is Turkey for result number87": true,
+					"Country is Turkey for result number88": true,
+					"Country is Turkey for result number89": true,
+					"Country is Turkey for result number90": true,
+					"Country is Turkey for result number91": true,
+					"Country is Turkey for result number92": true,
+					"Country is Turkey for result number93": true,
+					"Country is Turkey for result number94": true,
+					"Country is Turkey for result number95": true,
+					"Country is Turkey for result number96": true,
+					"Country is Turkey for result number97": true,
+					"Country is Turkey for result number98": true,
+					"Country is Turkey for result number99": true,
+					"Country is Turkey for result number100": true,
+					"Country is Turkey for result number101": true,
+					"Country is Turkey for result number102": true,
+					"Country is Turkey for result number103": true,
+					"Country is Turkey for result number104": true,
+					"Country is Turkey for result number105": true,
+					"Country is Turkey for result number106": true,
+					"Country is Turkey for result number107": true,
+					"Country is Turkey for result number108": true,
+					"Country is Turkey for result number109": true,
+					"Country is Turkey for result number110": true,
+					"Country is Turkey for result number111": true,
+					"Country is Turkey for result number112": true,
+					"Country is Turkey for result number113": true,
+					"Country is Turkey for result number114": true,
+					"Country is Turkey for result number115": true,
+					"Country is Turkey for result number116": true,
+					"Country is Turkey for result number117": true,
+					"Country is Turkey for result number118": true,
+					"Country is Turkey for result number119": true,
+					"Country is Turkey for result number120": true,
+					"Country is Turkey for result number121": true,
+					"Country is Turkey for result number122": true,
+					"Country is Turkey for result number123": true,
+					"Country is Turkey for result number124": true,
+					"Country is Turkey for result number125": true,
+					"Country is Turkey for result number126": true,
+					"Country is Turkey for result number127": true,
+					"Country is Turkey for result number128": true,
+					"Country is Turkey for result number129": true,
+					"Country is Turkey for result number130": true,
+					"Country is Turkey for result number131": true,
+					"Country is Turkey for result number132": true,
+					"Country is Turkey for result number133": true,
+					"Country is Turkey for result number134": true,
+					"Country is Turkey for result number135": true,
+					"Country is Turkey for result number136": true,
+					"Country is Turkey for result number137": true,
+					"Country is Turkey for result number138": true,
+					"Country is Turkey for result number139": true,
+					"Country is Turkey for result number140": true,
+					"Country is Turkey for result number141": true,
+					"Country is Turkey for result number142": true,
+					"Country is Turkey for result number143": true,
+					"Country is Turkey for result number144": true,
+					"Country is Turkey for result number145": true,
+					"Country is Turkey for result number146": true,
+					"Country is Turkey for result number147": true,
+					"Country is Turkey for result number148": true,
+					"Country is Turkey for result number149": true,
+					"Country is Turkey for result number150": true,
+					"Country is Turkey for result number151": true,
+					"Country is Turkey for result number152": true,
+					"Country is Turkey for result number153": true,
+					"Country is Turkey for result number154": true,
+					"Country is Turkey for result number155": true,
+					"Country is Turkey for result number156": true,
+					"Country is Turkey for result number157": true,
+					"Country is Turkey for result number158": true,
+					"Country is Turkey for result number159": true,
+					"Country is Turkey for result number160": true,
+					"Country is Turkey for result number161": true,
+					"Country is Turkey for result number162": true,
+					"Country is Turkey for result number163": true,
+					"Country is Turkey for result number164": true,
+					"Country is Turkey for result number165": true,
+					"Country is Turkey for result number166": true,
+					"Country is Turkey for result number167": true,
+					"Country is Turkey for result number168": true,
+					"Country is Turkey for result number169": true,
+					"Country is Turkey for result number170": true,
+					"Country is Turkey for result number171": true,
+					"Country is Turkey for result number172": true
+				}
+			]
+		},
+		{
+			"id": "14e97838-1a98-4eac-9dd7-d2ecdb3ca38f",
+			"name": "List Universities with search criteria(by exact name)",
+			"url": "http://universities.hipolabs.com/search?name=Middle%20East%20University",
+			"time": 163,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Name is Middle East University": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name is Middle East University": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				163
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Name is Middle East University": true
+				}
+			]
+		},
+		{
+			"id": "946e8db0-5020-4d43-82cd-2f409da10b68",
+			"name": "List Universities with search criteria(by not full name/like name)",
+			"url": "http://universities.hipolabs.com/search?name=Middle",
+			"time": 222,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Data found": true,
+				"Name contains Middle result number0": true,
+				"Name contains Middle result number1": true,
+				"Name contains Middle result number2": true,
+				"Name contains Middle result number3": true,
+				"Name contains Middle result number4": true,
+				"Name contains Middle result number5": true,
+				"Name contains Middle result number6": true,
+				"Name contains Middle result number7": true,
+				"Name contains Middle result number8": true,
+				"Name contains Middle result number9": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Data found": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name contains Middle result number0": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name contains Middle result number1": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name contains Middle result number2": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name contains Middle result number3": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name contains Middle result number4": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name contains Middle result number5": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name contains Middle result number6": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name contains Middle result number7": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name contains Middle result number8": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name contains Middle result number9": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				222
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Data found": true,
+					"Name contains Middle result number0": true,
+					"Name contains Middle result number1": true,
+					"Name contains Middle result number2": true,
+					"Name contains Middle result number3": true,
+					"Name contains Middle result number4": true,
+					"Name contains Middle result number5": true,
+					"Name contains Middle result number6": true,
+					"Name contains Middle result number7": true,
+					"Name contains Middle result number8": true,
+					"Name contains Middle result number9": true
+				}
+			]
+		},
+		{
+			"id": "368f51d6-6210-4d71-9829-c11c5d7e2173",
+			"name": "List Universities with search criteria(by not full countr/like country)",
+			"url": "http://universities.hipolabs.com/search?country=Jor",
+			"time": 142,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Data found": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Data found": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				142
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Data found": false
+				}
+			]
+		},
+		{
+			"id": "9dce88f8-9cf0-428a-a443-449b735d9f49",
+			"name": "List Universities with search criteria(name upper case)",
+			"url": "http://universities.hipolabs.com/search?name=MID",
+			"time": 203,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Data found": true,
+				"Name contains Mid result number0": true,
+				"Name contains Mid result number1": true,
+				"Name contains Mid result number2": true,
+				"Name contains Mid result number3": true,
+				"Name contains Mid result number4": true,
+				"Name contains Mid result number5": true,
+				"Name contains Mid result number6": true,
+				"Name contains Mid result number7": true,
+				"Name contains Mid result number8": true,
+				"Name contains Mid result number9": true,
+				"Name contains Mid result number10": true,
+				"Name contains Mid result number11": true,
+				"Name contains Mid result number12": true,
+				"Name contains Mid result number13": true,
+				"Name contains Mid result number14": true,
+				"Name contains Mid result number15": true,
+				"Name contains Mid result number16": true,
+				"Name contains Mid result number17": true,
+				"Name contains Mid result number18": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Data found": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name contains Mid result number0": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name contains Mid result number1": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name contains Mid result number2": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name contains Mid result number3": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name contains Mid result number4": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name contains Mid result number5": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name contains Mid result number6": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name contains Mid result number7": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name contains Mid result number8": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name contains Mid result number9": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name contains Mid result number10": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name contains Mid result number11": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name contains Mid result number12": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name contains Mid result number13": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name contains Mid result number14": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name contains Mid result number15": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name contains Mid result number16": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name contains Mid result number17": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name contains Mid result number18": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				203
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Data found": true,
+					"Name contains Mid result number0": true,
+					"Name contains Mid result number1": true,
+					"Name contains Mid result number2": true,
+					"Name contains Mid result number3": true,
+					"Name contains Mid result number4": true,
+					"Name contains Mid result number5": true,
+					"Name contains Mid result number6": true,
+					"Name contains Mid result number7": true,
+					"Name contains Mid result number8": true,
+					"Name contains Mid result number9": true,
+					"Name contains Mid result number10": true,
+					"Name contains Mid result number11": true,
+					"Name contains Mid result number12": true,
+					"Name contains Mid result number13": true,
+					"Name contains Mid result number14": true,
+					"Name contains Mid result number15": true,
+					"Name contains Mid result number16": true,
+					"Name contains Mid result number17": true,
+					"Name contains Mid result number18": true
+				}
+			]
+		},
+		{
+			"id": "a7cd993f-8863-4d5a-a260-56823a889e71",
+			"name": "List Universities with search criteria(country upper case)",
+			"url": "http://universities.hipolabs.com/search?country=JORdan",
+			"time": 233,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Data found": true,
+				"Country is Jordan for result number0": true,
+				"Country is Jordan for result number1": true,
+				"Country is Jordan for result number2": true,
+				"Country is Jordan for result number3": true,
+				"Country is Jordan for result number4": true,
+				"Country is Jordan for result number5": true,
+				"Country is Jordan for result number6": true,
+				"Country is Jordan for result number7": true,
+				"Country is Jordan for result number8": true,
+				"Country is Jordan for result number9": true,
+				"Country is Jordan for result number10": true,
+				"Country is Jordan for result number11": true,
+				"Country is Jordan for result number12": true,
+				"Country is Jordan for result number13": true,
+				"Country is Jordan for result number14": true,
+				"Country is Jordan for result number15": true,
+				"Country is Jordan for result number16": true,
+				"Country is Jordan for result number17": true,
+				"Country is Jordan for result number18": true,
+				"Country is Jordan for result number19": true,
+				"Country is Jordan for result number20": true,
+				"Country is Jordan for result number21": true,
+				"Country is Jordan for result number22": true,
+				"Country is Jordan for result number23": true,
+				"Country is Jordan for result number24": true,
+				"Country is Jordan for result number25": true,
+				"Country is Jordan for result number26": true,
+				"Country is Jordan for result number27": true,
+				"Country is Jordan for result number28": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Data found": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Jordan for result number0": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Jordan for result number1": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Jordan for result number2": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Jordan for result number3": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Jordan for result number4": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Jordan for result number5": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Jordan for result number6": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Jordan for result number7": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Jordan for result number8": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Jordan for result number9": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Jordan for result number10": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Jordan for result number11": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Jordan for result number12": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Jordan for result number13": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Jordan for result number14": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Jordan for result number15": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Jordan for result number16": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Jordan for result number17": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Jordan for result number18": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Jordan for result number19": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Jordan for result number20": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Jordan for result number21": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Jordan for result number22": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Jordan for result number23": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Jordan for result number24": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Jordan for result number25": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Jordan for result number26": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Jordan for result number27": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Country is Jordan for result number28": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				233
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Data found": true,
+					"Country is Jordan for result number0": true,
+					"Country is Jordan for result number1": true,
+					"Country is Jordan for result number2": true,
+					"Country is Jordan for result number3": true,
+					"Country is Jordan for result number4": true,
+					"Country is Jordan for result number5": true,
+					"Country is Jordan for result number6": true,
+					"Country is Jordan for result number7": true,
+					"Country is Jordan for result number8": true,
+					"Country is Jordan for result number9": true,
+					"Country is Jordan for result number10": true,
+					"Country is Jordan for result number11": true,
+					"Country is Jordan for result number12": true,
+					"Country is Jordan for result number13": true,
+					"Country is Jordan for result number14": true,
+					"Country is Jordan for result number15": true,
+					"Country is Jordan for result number16": true,
+					"Country is Jordan for result number17": true,
+					"Country is Jordan for result number18": true,
+					"Country is Jordan for result number19": true,
+					"Country is Jordan for result number20": true,
+					"Country is Jordan for result number21": true,
+					"Country is Jordan for result number22": true,
+					"Country is Jordan for result number23": true,
+					"Country is Jordan for result number24": true,
+					"Country is Jordan for result number25": true,
+					"Country is Jordan for result number26": true,
+					"Country is Jordan for result number27": true,
+					"Country is Jordan for result number28": true
+				}
+			]
+		},
+		{
+			"id": "43894173-9239-4a8c-94c0-a44863da95bf",
+			"name": "List Universities with search criteria(name no match)",
+			"url": "http://universities.hipolabs.com/search?name=ruqaya",
+			"time": 225,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"No data found": true,
+				"No name found validation message test": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"No data found": {
+					"pass": 1,
+					"fail": 0
+				},
+				"No name found validation message test": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				225
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"No data found": true,
+					"No name found validation message test": false
+				}
+			]
+		},
+		{
+			"id": "9c628aa3-1572-49eb-a7e2-306cf38f4147",
+			"name": "List Universities with search criteria(country no match)",
+			"url": "http://universities.hipolabs.com/search?country=ruqaya",
+			"time": 249,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"No data found": true,
+				"No country found validation message test": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"No data found": {
+					"pass": 1,
+					"fail": 0
+				},
+				"No country found validation message test": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				249
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"No data found": true,
+					"No country found validation message test": false
+				}
+			]
+		},
+		{
+			"id": "b07af892-1a4e-40d8-96ee-a97dc015f38d",
+			"name": "List Universities with search criteria(name&country no match)",
+			"url": "http://universities.hipolabs.com/search?name=ruqay&country=ruqaya",
+			"time": 238,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"No data found": true,
+				"No data found validation message test": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"No data found": {
+					"pass": 1,
+					"fail": 0
+				},
+				"No data found validation message test": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				238
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"No data found": true,
+					"No data found validation message test": false
+				}
+			]
+		},
+		{
+			"id": "8e11ec1b-ff5c-4e38-a2eb-4fd7fafea3bf",
+			"name": "List Universities with search criteria(name match&country no match)",
+			"url": "http://universities.hipolabs.com/search?name=Middle&country=ruqaya",
+			"time": 247,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"No data found": true,
+				"No data found validation message test": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"No data found": {
+					"pass": 1,
+					"fail": 0
+				},
+				"No data found validation message test": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				247
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"No data found": true,
+					"No data found validation message test": false
+				}
+			]
+		},
+		{
+			"id": "ad1d6da6-422d-46e6-a3d7-7206c24ed216",
+			"name": "List Universities with search criteria(name no match&country match",
+			"url": "http://universities.hipolabs.com/search?name=ruqaya&country=Turkey",
+			"time": 236,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"No data found": true,
+				"No data found validation message test": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"No data found": {
+					"pass": 1,
+					"fail": 0
+				},
+				"No data found validation message test": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				236
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"No data found": true,
+					"No data found validation message test": false
+				}
+			]
+		},
+		{
+			"id": "c4fa6cb9-45e6-4c66-80c6-5ee8d33ac691",
+			"name": "List Universities with typo error in search criteria",
+			"url": "http://universities.hipolabs.com/search?nam=&ountry=Jordan",
+			"time": 1850,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Data found response": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Data found response": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1850
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Data found response": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 7941,
+	"collection": {
+		"requests": [
+			{
+				"id": "1e5e776b-1a76-48aa-8ac0-3a18f89b7d31",
+				"method": "GET"
+			},
+			{
+				"id": "75176aeb-f427-4466-83b0-75afe8a727d5",
+				"method": "GET"
+			},
+			{
+				"id": "590818b2-0f9e-41dc-b4af-21cf7662a1ef",
+				"method": "GET"
+			},
+			{
+				"id": "255a9d42-8652-42e9-9682-4d4c9ae06f66",
+				"method": "GET"
+			},
+			{
+				"id": "14e97838-1a98-4eac-9dd7-d2ecdb3ca38f",
+				"method": "GET"
+			},
+			{
+				"id": "946e8db0-5020-4d43-82cd-2f409da10b68",
+				"method": "GET"
+			},
+			{
+				"id": "368f51d6-6210-4d71-9829-c11c5d7e2173",
+				"method": "GET"
+			},
+			{
+				"id": "9dce88f8-9cf0-428a-a443-449b735d9f49",
+				"method": "GET"
+			},
+			{
+				"id": "a7cd993f-8863-4d5a-a260-56823a889e71",
+				"method": "GET"
+			},
+			{
+				"id": "43894173-9239-4a8c-94c0-a44863da95bf",
+				"method": "GET"
+			},
+			{
+				"id": "9c628aa3-1572-49eb-a7e2-306cf38f4147",
+				"method": "GET"
+			},
+			{
+				"id": "b07af892-1a4e-40d8-96ee-a97dc015f38d",
+				"method": "GET"
+			},
+			{
+				"id": "8e11ec1b-ff5c-4e38-a2eb-4fd7fafea3bf",
+				"method": "GET"
+			},
+			{
+				"id": "ad1d6da6-422d-46e6-a3d7-7206c24ed216",
+				"method": "GET"
+			},
+			{
+				"id": "c4fa6cb9-45e6-4c66-80c6-5ee8d33ac691",
+				"method": "GET"
+			}
+		]
+	}
+}
